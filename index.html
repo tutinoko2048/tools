@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>index.html</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="text/javascript" src="main.js"></script>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  </head>
+  <body>
+  <h1>Manifest Generator</h1>
+  <form id="form1" action="#">
+  name<br>
+    <input type="text" id="manifest_name" value=""><br>
+  description<br>
+    <input type="text" id="manifest_desc" value=""><br>
+  version(1,0,0)<br>
+    <input type="text" id="manifest_ver" value="1,0,0"><br>
+  type<br>
+<select id="manifest_type">
+    <option value="resources">Resources</option>
+    <option value="data">Data</option>
+</select>
+	    
+    <input type="button" onclick="func1()" value="送信">
+  </form>
+  <br><hr><br>
+  <div id="manifest_output"></div>
+  
+  <script language="javascript" type="text/javascript">
+  function func1() {
+    var manifest_name = document.getElementById("manifest_name").value;
+    var manifest_desc = document.getElementById("manifest_desc").value;
+    var manifest_ver = document.getElementById("manifest_ver").value;
+    // select要素を取得
+    var element = document.getElementById("manifest_type");
+
+    // 選択状態の項目の値を取得
+    var manifest_type = element.value;
+
+
+    input_message = "\{\n\"format_version\":1,\n\"header\":\{\n\"description\":\"" + manifest_desc + "\",\n\"name\":\"" + manifest_name + "\",\n\"uuid\":\"8c128a20-e010-11ea-f5e9-512c8d5036f2\",\n\"version\":\[" + manifest_ver + "\]},\n\"modules\":\[\n\{\n\"description\":\"" + manifest_desc + "\",\n\"type\":\"" + manifest_type + "\",\n\"uuid\":\"8c134d70-e010-11ea-a233-b1d8a1970e33\",\n\"version\":\[" + manifest_ver + "\]\n\}\n\]\n\}";
+
+    document.getElementById("manifest_output").innerHTML = input_message;
+    alert(input_message);
+  }
+  </script>
+   
+        
+</body>
+</html>
