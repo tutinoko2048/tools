@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>index.html</title>
+  <title>Manifest Generator</title>
   <link rel="stylesheet" type="text/css" href="main.css">
   <script type="text/javascript" src="main.js"></script>
   <meta http-equiv="Cache-Control" content="no-cache">
@@ -24,9 +24,15 @@
 	    
     <input type="button" onclick="func1()" value="送信">
   </form>
-  <br><hr><br>
-  <div id="manifest_output"></div>
   
+  
+  <br><hr><br>
+  
+    <textarea name="output" rows="20" cols="60" id="manifest_output"></textarea>
+    <br><br>
+    
+    <a href="https://github.com/tutinoko2048/tools">Github</a>
+    <br>
   <script language="javascript" type="text/javascript">
   function func1() {
     var manifest_name = document.getElementById("manifest_name").value;
@@ -39,13 +45,18 @@
     var manifest_type = element.value;
 
 
-    input_message = "\{\n\"format_version\":1,\n\"header\":\{\n\"description\":\"" + manifest_desc + "\",\n\"name\":\"" + manifest_name + "\",\n\"uuid\":\"8c128a20-e010-11ea-f5e9-512c8d5036f2\",\n\"version\":\[" + manifest_ver + "\]},\n\"modules\":\[\n\{\n\"description\":\"" + manifest_desc + "\",\n\"type\":\"" + manifest_type + "\",\n\"uuid\":\"8c134d70-e010-11ea-a233-b1d8a1970e33\",\n\"version\":\[" + manifest_ver + "\]\n\}\n\]\n\}";
+    input_message = "\{\n\"format_version\":1,\n\"header\":\{\n\"description\":\"" + manifest_desc + "\",\n\"name\":\"" + manifest_name + "\",\n\"uuid\":\"8c128a20-e010-11ea-f5e9-512c8d5036f2\",\n\"version\":\[" + manifest_ver + "\]\n},\n\"modules\":\[\n\{\n\"description\":\"" + manifest_desc + "\",\n\"type\":\"" + manifest_type + "\",\n\"uuid\":\"8c134d70-e010-11ea-a233-b1d8a1970e33\",\n\"version\":\[" + manifest_ver + "\]\n\}\n\]\n\}";
 
     document.getElementById("manifest_output").innerHTML = input_message;
-    alert(input_message);
+ 
+    
+    var textarea = document.getElementsByTagName("textarea")[0];
+    // 文字をすべて選択
+    textarea.select();
+    // コピー
+    document.execCommand("copy");
   }
   </script>
    
-        
 </body>
 </html>
