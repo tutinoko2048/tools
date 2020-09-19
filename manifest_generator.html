@@ -4,8 +4,15 @@
   <meta charset="utf-8">
   <title>Manifest Generator</title>
   <link rel="stylesheet" type="text/css" href="main.css">
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="js/manifest_generator.js"></script>
   <meta http-equiv="Cache-Control" content="no-cache">
+  
+  <style>
+  body {
+  font-family: "Helvetica";
+  }
+  </style>
+  
   </head>
   <body>
   <h1>Manifest Generator</h1>
@@ -22,40 +29,18 @@
     <option value="data">Data</option>
 </select>
 	    
-    <input type="button" onclick="func1()" value="送信">
+    <input type="button" onclick="func1()" value="生成">
   </form>
-  
   
   <br><hr><br>
   
-    <textarea name="output" rows="20" cols="60" id="manifest_output"></textarea>
+    <textarea readonly name="output" rows="25" cols="60" id="manifest_output"></textarea>
     <br><br>
     
     <a href="https://github.com/tutinoko2048/tools">Github</a>
     <br>
   <script language="javascript" type="text/javascript">
-  function func1() {
-    var manifest_name = document.getElementById("manifest_name").value;
-    var manifest_desc = document.getElementById("manifest_desc").value;
-    var manifest_ver = document.getElementById("manifest_ver").value;
-    // select要素を取得
-    var element = document.getElementById("manifest_type");
-
-    // 選択状態の項目の値を取得
-    var manifest_type = element.value;
-
-
-    input_message = "\{\n\"format_version\":1,\n\"header\":\{\n\"description\":\"" + manifest_desc + "\",\n\"name\":\"" + manifest_name + "\",\n\"uuid\":\"8c128a20-e010-11ea-f5e9-512c8d5036f2\",\n\"version\":\[" + manifest_ver + "\]\n},\n\"modules\":\[\n\{\n\"description\":\"" + manifest_desc + "\",\n\"type\":\"" + manifest_type + "\",\n\"uuid\":\"8c134d70-e010-11ea-a233-b1d8a1970e33\",\n\"version\":\[" + manifest_ver + "\]\n\}\n\]\n\}";
-
-    document.getElementById("manifest_output").innerHTML = input_message;
- 
-    
-    var textarea = document.getElementsByTagName("textarea")[0];
-    // 文字をすべて選択
-    textarea.select();
-    // コピー
-    document.execCommand("copy");
-  }
+  
   </script>
    
 </body>
