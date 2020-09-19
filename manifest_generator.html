@@ -3,20 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Manifest Generator</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <script type="text/javascript" src="js/manifest_generator.js"></script>
   <meta http-equiv="Cache-Control" content="no-cache">
-  
-  <style>
-  body {
-  font-family: "Helvetica";
-  }
-  </style>
+
   
   </head>
   <body>
   <h1>Manifest Generator</h1>
   <form id="form1" action="#">
+  
   name<br>
     <input type="text" id="manifest_name" value=""><br>
   description<br>
@@ -31,17 +27,14 @@
 	    
     <input type="button" onclick="func1()" value="生成">
   </form>
-  
   <br><hr><br>
+        <textarea class="output" readonly name="output" rows="25" cols="100" id="manifest_output"></textarea>
   
-    <textarea readonly name="output" rows="25" cols="60" id="manifest_output"></textarea>
+
     <br><br>
     
     <a href="https://github.com/tutinoko2048/tools">Github</a>
     <br>
-  <script language="javascript" type="text/javascript">
-  
-  </script>
    
 </body>
 </html>
