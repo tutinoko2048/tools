@@ -19,17 +19,15 @@ function func1() {
     let manifest_name = document.getElementById("manifest_name").value;
     let manifest_desc = document.getElementById("manifest_desc").value;
     let manifest_ver = document.getElementById("manifest_ver").value;
-    // select要素を取得
-    let element = document.getElementById("manifest_type");
 
-    // 選択状態の項目の値を取得
+    let element = document.getElementById("manifest_type");
     let manifest_type = element.value;
 
     let uuid1 = generateUuid();
     let uuid2 = generateUuid();
 
     let Datajson = {
-  "format_version": 1,
+  "format_version": 2,
   "header": {
     "description": manifest_desc,
     "name": manifest_name,
