@@ -6,35 +6,37 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script type="text/javascript" src="js/manifest_generator.js"></script>
   <meta http-equiv="Cache-Control" content="no-cache">
-
-  
-  </head>
-  <body>
+</head>
+<body>
+  <div class="main">
   <h1>Manifest Generator</h1>
+  <div class="output">
+  <textarea readonly name="output" rows="30" cols="100" id="manifest_output"></textarea>
+  </div>
+
+  <div class="input">
   <form id="form1" action="#">
-  
-  name<br>
-    <input type="text" id="manifest_name" value=""><br>
-  description<br>
-    <input type="text" id="manifest_desc" value=""><br>
-  version(1,0,0)<br>
-    <input type="text" id="manifest_ver" value="1,0,0"><br>
-  type<br>
-<select id="manifest_type">
+    Name <br>
+    <input type="text" id="manifest_name" value="" class="input"><br>
+    <br>
+    Description<br>
+    <textarea id="manifest_desc" class="input" style="height: 60px;"></textarea><br>
+    <br>
+    Version(1,0,0)<br>
+    <input type="text" id="manifest_ver" value="1,0,0" class="input"><br>
+    <br>
+    Type<br>
+    <select id="manifest_type" style="width: 120px; height: 30px; font-size: 12pt;">
     <option value="resources">Resources</option>
     <option value="data">Data</option>
-</select>
-	    
-    <input type="button" onclick="func1()" value="生成">
+    </select><br><br>
+    <input type="button" onclick="func1()" value="生成" class="input button">
   </form>
-  <br><hr><br>
-        <textarea class="output" readonly name="output" rows="25" cols="100" id="manifest_output"></textarea>
-  
-
-    <br><br>
-    
-    <a href="https://github.com/tutinoko2048/tools">Github</a>
-    <br>
-   
+  </div>
+    <div class="cb"></div>
+<br>
+  <br><br>
+  <a href="https://github.com/tutinoko2048/tools">Github</a><br>
+  </div>
 </body>
 </html>
