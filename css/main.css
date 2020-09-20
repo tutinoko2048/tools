@@ -1,3 +1,34 @@
 body {
 font-family: "Helvetica";
 }
+.main {
+margin: 10px;
+}
+.output {
+margin-right: 30px;
+float: right;
+font-size: 50pt;
+}
+
+.cb{
+  /* floatを解除 */
+  clear: both;
+}
+.input {
+height: 20px;
+width: 300px;
+font-size     : 12pt;        /* 文字サイズ */
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 20pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  background    : #000000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  height: 40px;
+}
+.button:hover {
+}
