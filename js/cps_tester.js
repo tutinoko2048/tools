@@ -1,5 +1,5 @@
 var click_count = 0;
-
+document.getElementById("output").innerHTML = click_count
 function count() {
     document.getElementById("output").innerHTML = ++ click_count
     
