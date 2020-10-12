@@ -1,5 +1,4 @@
 var click_count = 0;
-document.getElementById("output").innerHTML = click_count;
 function count() {
     document.getElementById("output").innerHTML = ++ click_count;
     
@@ -14,3 +13,11 @@ function count() {
   }
   t = now;
   }, false);
+
+count = 10; //カウントの初期値
+timerID = setInterval('countdown()',1000); //1秒毎にcountup()を呼び出し
+
+function countdown() {
+	count--;
+	document.getElementById("timer").innerHTML = count;
+}
