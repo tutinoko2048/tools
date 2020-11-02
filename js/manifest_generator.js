@@ -18,7 +18,6 @@ function generateUuid() {
 function func1() {
     let manifest_name = document.getElementById("manifest_name").value;
     let manifest_desc = document.getElementById("manifest_desc").value;
-    let manifest_ver = document.getElementById("manifest_ver").value;
 
     let element = document.getElementById("manifest_type");
     let manifest_type = element.value;
@@ -32,14 +31,14 @@ function func1() {
     "description": manifest_desc,
     "name": manifest_name,
     "uuid": uuid1,
-    "version": [manifest_ver]
+    "version": [ 1,0,0 ]
   },
   "modules": [
     {
       "description": manifest_desc,
       "type": manifest_type,
       "uuid": uuid2,
-      "version": [manifest_ver]
+      "version": [ 1,0,0 ]
     }
   ]
 };
