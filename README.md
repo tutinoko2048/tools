@@ -6,5 +6,5 @@ https://tutinoko2048.github.io/tools/index.html
 manifest_generator<br>
 https://tutinoko2048.github.io/tools/manifest_generator.html
 <br>
-cps_tester<br>
+cps_tester(未完成)<br>
 https://tutinoko2048.github.io/tools/cps_tester.html
