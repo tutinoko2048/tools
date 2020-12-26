@@ -5,7 +5,7 @@ function func1() {
 
 
     for (min < max) {
-    let output = min + 1
+    let output = min + 1;
     
     }
 
