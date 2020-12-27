@@ -20,11 +20,16 @@ function func1() {
     
   }
   
-  function text() {
-    let min = prompt("min", "");
-    let max = prompt("max", "");
-    let text = prompt("text", "");
-    alert(min + max + text)
+function text() {
+    let min = document.getElementById("min").value;
+    let max = document.getElementById("max").value;
+    let text = document.getElementById("text").value;
+
+    for (min < max) {
+    let output = min++;
+    }
+    
+    document.getElementById("output").innerHTML = output;
     
   }
   
