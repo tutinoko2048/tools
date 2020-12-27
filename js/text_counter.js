@@ -23,16 +23,8 @@ function func1() {
   function text() {
     let min = prompt("min", "");
     let max = prompt("max", "");
-    alert(min + max)
-   
-    let text = document.getElementById("text").value;
-
-    for (min < max) {
-    let output = min++;
-    
-    }
-    
-    document.getElementById("output").innerHTML = output;
+    let text = prompt("text", "");
+    alert(min + max + text)
     
   }
   
