@@ -21,8 +21,10 @@ function func1() {
   }
   
   function text() {
-    min = window.prompt("min", "0");
-    max = window.prompt("max", "");
+    let min = prompt("min", "");
+    let max = prompt("max", "");
+    alert(min + max)
+   
     let text = document.getElementById("text").value;
 
     for (min < max) {
