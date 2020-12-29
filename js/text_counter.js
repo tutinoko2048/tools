@@ -1,3 +1,7 @@
+function click() {
+alert('a')
+}
+
 function func1() {
     let min = document.getElementById("min").value;
     let max = document.getElementById("max").value;
