@@ -31,7 +31,8 @@ function func1() {
     "description": manifest_desc,
     "name": manifest_name,
     "uuid": uuid1,
-    "version": [ 1,0,0 ]
+    "version": [ 1,0,0 ],
+    "min_engine_version": [ 1, 16, 200 ]
   },
   "modules": [
     {
