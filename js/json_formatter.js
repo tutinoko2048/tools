@@ -18,3 +18,22 @@ document.querySelector('#size').innerHTML = size_small;
 document.querySelector('#daytime').innerHTML = input.lastModifiedDate　;
 
  }, false)
+
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+  //対象エリア
+  var dropArea = document.getElementById('drop_area');
+
+  //dragoverイベントでクラスを付与
+  dropArea.addEventListener("dragover",(event) => {
+    event.preventDefault(); //こいつが注意点
+    event.target.classList.add('drop');
+  });
+  //dragleaveイベントでクラスを削除
+  dropArea.addEventListener("dragleave",(event) => {
+    event.target.classList.remove('drop');
+  });
+
+});
