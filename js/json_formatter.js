@@ -9,4 +9,11 @@ inputfile.addEventListener("change", function(e) {
  reader.onload = function() {
    image.src = reader.result;
  }
+ var input = document.querySelector('#inputfile').files[0];
+// 最後に、反映
+document.querySelector('#name').innerHTML = input.name;
+document.querySelector('#type').innerHTML = input.type;
+document.querySelector('#size').innerHTML = input.size / 1024;
+document.querySelector('#daytime').innerHTML = input.lastModifiedDate　;
+
  }, false)
