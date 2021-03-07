@@ -21,19 +21,24 @@ document.querySelector('#daytime').innerHTML = input.lastModifiedDate　;
 
 
 
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded',() => {
 
-  //対象エリア
-  var dropArea = document.getElementById('drop_area');
+  var uploadArea = document.getElementById('drop_area');
 
-  //dragoverイベントでクラスを付与
-  dropArea.addEventListener("dragover",(event) => {
-    event.preventDefault(); //こいつが注意点
-    event.target.classList.add('drop');
+  uploadArea.addEventListener("dragover",(event) => {
+    event.preventDefault();
+    event.target.classList.add('drag');
   });
-  //dragleaveイベントでクラスを削除
-  dropArea.addEventListener("dragleave",(event) => {
-    event.target.classList.remove('drop');
+
+  uploadArea.addEventListener("dragleave",(event) => {
+    event.target.classList.remove('drag');
+  });
+
+  // 追加のdropイベント
+  uploadArea.addEventListener("drop",(event) => {
+    event.preventDefault();
+    var inputfile = document.querySelectorAll('input[name="fileupload"]'); //好きなようにDOMを取得してください
+    input[0].files = event.dataTransfer.files; //取得したinput[type=file]にDropしたファイルを突っ込む
   });
 
 });
