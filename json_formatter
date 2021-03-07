@@ -1,0 +1,12 @@
+<html>
+ <head>
+   <meta http-equiv="content-type" charset="utf-8">
+ </head>
+ <body>
+   <h1>jsonを整形するやつ</h1>
+ 
+   <input type="file" id="inputfile" /> <!--単一のファイルを読み込む場合-->
+   <img id="img">
+   <script src="js/json_formatter.js" ></script>
+ </body>
+</html>
