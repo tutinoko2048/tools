@@ -2,11 +2,11 @@
   padding:120px 0;
   width:50%;
   margin: 0 auto 20px;
-  background: #f6f6f6;
+  background: #f5deb3;
   text-align: center;
 }
 .drop_area.drop{
-  background: #f0f0f0;
+  background: #deb887;
 }
 
 .drop_area input {
