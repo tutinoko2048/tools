@@ -1,0 +1,14 @@
+.drop_area{
+  padding:180px 0;
+  width:100%;
+  margin: 0 auto 20px;
+  background: #f6f6f6;
+  text-align: center;
+}
+.drop_area.drop{
+  background: #f0f0f0;
+}
+
+.drop_area input {
+   margin:0 auto;
+}
