@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded',() => {
   // 追加のdropイベント
   uploadArea.addEventListener("drop",(event) => {
     event.preventDefault();
-    var inputfile = document.querySelectorAll('input[name="fileupload"]'); //好きなようにDOMを取得してください
+    var input = document.querySelectorAll('input[name="fileupload"]'); //好きなようにDOMを取得してください
     input[0].files = event.dataTransfer.files; //取得したinput[type=file]にDropしたファイルを突っ込む
+    var inputfile = input[type=file];
   });
 });
 
