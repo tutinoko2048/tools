@@ -13,7 +13,8 @@ inputfile.addEventListener("change", function(e) {
 // 最後に、反映
 document.querySelector('#name').innerHTML = input.name;
 document.querySelector('#type').innerHTML = input.type;
-document.querySelector('#size').innerHTML = Math.round(input.size / 1024);
+let size_small = Math.round(input.size / 1024) + 'KB';
+document.querySelector('#size').innerHTML = size_small;
 document.querySelector('#daytime').innerHTML = input.lastModifiedDate　;
 
  }, false)
