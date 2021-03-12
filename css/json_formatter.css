@@ -1,5 +1,40 @@
+.no-active {
+    display: none;
+}
+.drop-zone {
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.drop-zone-text {
+    padding: 50px 0px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.overlay-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    color: #F7F7F7;
+}
+
 input {
-    display: none; 
+    display: none;
 }
 
 .select-file {
@@ -12,9 +47,9 @@ input {
     color: #F7F7F7;
     cursor: pointer;
     font-weight: 700;
-    z-index: 1; 
+    z-index: 1;
 }
 
-.select-file:hover {
-    background-color: #136EB6; 
+.select-file::hover {
+    background-color: #136EB6;
 }
