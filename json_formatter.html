@@ -11,11 +11,20 @@
  v13
   <br>
 
-  <label for="file_upload" class="select-file" id="js-select-file">
-    ファイルを選択してください
-    <input type="file" id="file_upload">
-</label>
-  
+<div class="container">
+    <div class="drop-zone" id="js-dropzone">
+        <div class="overlay-area" id="js-overlay-area">
+            <p class="no-active" id="js-overlay-text">ここにドラッグ&ドロップしてください。</p>
+        </div>
+        <p class="drop-zone-text">ファイルを選択するか、ドラッグ&ドロップしてください。</p>
+        <label for="file_upload" class="select-file" id="js-select-file">
+            ファイルを選択してください
+            <input type="file" id="file_upload">
+        </label>
+        <div class="selected-file no-active" id="js-selected-file">
+        </div>
+    </div>
+</div>
   <br>
 
   <br>
