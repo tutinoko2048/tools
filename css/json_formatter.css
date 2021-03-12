@@ -1,13 +1,20 @@
-.drop_area{
-  padding:120px 0;
-  width:50%;
-  background: #f5deb3;
-  text-align: center;
-}
-.drop_area.drop{
-  background: #deb887;
+input {
+    display: none; 
 }
 
-.drop_area input {
-   margin:0 auto;
+.select-file {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 25px 40px;
+    width: 400px;
+    background-color: #1AA1FF;
+    border-radius: 5px;
+    color: #F7F7F7;
+    cursor: pointer;
+    font-weight: 700;
+    z-index: 1; 
+}
+
+.select-file:hover {
+    background-color: #136EB6; 
 }
