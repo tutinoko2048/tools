@@ -9,20 +9,12 @@
  <body>
    <h1>json整形するやつ</h1>
  v12
-  <br>
-  <img id="img" width="40%">
-  <br>
-  <div id="drop_area" class="drop_area">
-   <input type="file" id="inputfile" /> <!--単一のファイルを読み込む場合-->
-  </div>
-  <br><br>
-■ name : ファイル名 : <span id="name"></span><br>
-■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
-■ size ：ファイルサイズ ：<span id="size"></span><br>
-■ lastModifiedDate ：ファイルの更新日付 ：<span id="daytime"></span><br>
-<br>
 
-   <script src="js/json_formatter.js" ></script>
+  <label for="file_upload" class="select-file" id="js-select-file">
+    ファイルを選択してください
+    <input type="file" id="file_upload">
+</label>
+  
   <br>
 
   <br>
