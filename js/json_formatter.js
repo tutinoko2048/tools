@@ -1,41 +1,43 @@
-const dropzone = document.getElementById('js-dropzone');
-const overlayText = document.getElementById('js-overlay-text');
-const overlayArea = document.getElementById('js-overlay-area');
-const fileInput = document.getElementById('file_upload');
-const selectedFile = document.getElementById('js-selected-file');
+var inputfile = document.getElementById('inputfile')
+var image = document.getElementById('img')
 
-// ドロップ可能エリアに入った時
-dropzone.addEventListener('dragenter', () => {
-    overlayArea.classList.add('overlay');
-    overlayText.classList.add('overlay-text');
-    overlayText.classList.remove('no-active');
+
+document.addEventListener('DOMContentLoaded',() => {
+
+  var uploadArea = document.getElementById('drop_area');
+
+  uploadArea.addEventListener("dragover",(event) => {
+    event.preventDefault();
+    event.target.classList.add('drag');
+  });
+
+  uploadArea.addEventListener("dragleave",(event) => {
+    event.target.classList.remove('drag');
+  });
+
+  // 追加のdropイベント
+  uploadArea.addEventListener("drop",(event) => {
+    event.preventDefault();
+    var input = document.querySelectorAll('input[name="fileupload"]'); //好きなようにDOMを取得してください
+    inputfile = event.dataTransfer.files; //取得したinput[type=file]にDropしたファイルを突っ込む
+  });
 });
 
-// ドロップ可能エリアを出た時
-overlayArea.addEventListener('dragleave', () => {
-    overlayArea.classList.remove('overlay');
-    overlayText.classList.remove('overlay-text');
-    overlayText.classList.add('no-active');
-});
+ 
+inputfile.addEventListener("change", function(e) {
+ 
+ var file = e.target.files 
+ var reader = new FileReader()
+ reader.readAsDataURL(file[0])
+ reader.onload = function() {
+   image.src = reader.result;
+ }
+ var input = document.querySelector('#inputfile').files[0];
+// 最後に、反映
+document.querySelector('#name').innerHTML = input.name;
+document.querySelector('#type').innerHTML = input.type;
+let size_small = Math.round(input.size / 1024) + 'KB';
+document.querySelector('#size').innerHTML = size_small;
+document.querySelector('#daytime').innerHTML = input.lastModifiedDate　;
 
-// ドロップ可能エリアにカーソルがある時
-overlayArea.addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-// ファイルをドロップした時
-overlayArea.addEventListener('drop', (e) => {
-    e.preventDefault();
-    var fileName = e.dataTransfer.files[0].name;
-    selectedFile.innerText = fileName;
-    selectedFile.classList.remove('no-active');
-    overlayArea.classList.remove('overlay');
-    overlayText.classList.remove('overlay-text');
-    overlayText.classList.add('no-active');
-});
-
-fileInput.addEventListener('change', () => {
-    var fileName = fileInput.files[0].name;
-    selectedFile.classList.remove('no-active');
-    selectedFile.innerText = fileName;
-});
+ }, false)
