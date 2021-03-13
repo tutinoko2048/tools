@@ -28,9 +28,9 @@ inputfile.addEventListener("change", function(e) {
  
  var file = e.target.files 
  var reader = new FileReader()
- reader.readAsDataURL(file[0])
+ reader.readAsText(file[0])
  reader.onload = function() {
-   image.src = reader.result;
+   document.getElementById('output') = reader.result;
  }
  var input = document.querySelector('#inputfile').files[0];
 // 最後に、反映
