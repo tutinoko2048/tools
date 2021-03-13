@@ -4,28 +4,25 @@
   <title>json formatter</title>
   <link rel="stylesheet" href="css/json_formatter.css">
   <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript" src="js/json_formatter.js"></script>
 
  </head>
  <body>
    <h1>json整形するやつ</h1>
- v14
+ v12
   <br>
+  <img id="img" width="40%">
+  <br>
+  <div id="drop_area" class="drop_area">
+   <input type="file" id="inputfile" /> <!--単一のファイルを読み込む場合-->
+  </div>
+  <br><br>
+■ name : ファイル名 : <span id="name"></span><br>
+■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
+■ size ：ファイルサイズ ：<span id="size"></span><br>
+■ lastModifiedDate ：ファイルの更新日付 ：<span id="daytime"></span><br>
+<br>
 
-<div class="container">
-    <div class="drop-zone" id="js-dropzone">
-        <div class="overlay-area" id="js-overlay-area">
-            <p class="no-active" id="js-overlay-text">ここにドラッグ&ドロップしてください。</p>
-        </div>
-        <p class="drop-zone-text">ファイルを選択するか、ドラッグ&ドロップしてください。</p>
-        <label for="file_upload" class="select-file" id="js-select-file">
-            ファイルを選択してください
-            <input type="file" id="file_upload">
-        </label>
-        <div class="selected-file no-active" id="js-selected-file">
-        </div>
-    </div>
-</div>
+   <script src="js/json_formatter.js" ></script>
   <br>
 
   <br>
