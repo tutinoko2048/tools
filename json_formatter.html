@@ -14,7 +14,10 @@
     #button {
       padding: 0 20%;
    }
-   
+ @media (mad-width: 599px) {
+  textarea {
+   width: 100%;
+  }
  @media (min-width: 600px) {
   #parent1 {
     display: flex;
@@ -27,6 +30,7 @@
   }
   #textarea {
     display: flex;
+    width: 50%;
   }
   #input {
     flex-grow: 1;
@@ -45,7 +49,7 @@ padding: 10px; /* ラベルとテキスト間の余白を指定する */
 border: 4px #AAAAAA;/* ラベルのボーダーを指定する */
 }
    textarea {
-    width: 50%;
+    font-size: 100%;
    }
   </style>
  </head>
