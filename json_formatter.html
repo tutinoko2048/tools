@@ -16,14 +16,23 @@
    }
    
  @media (min-width: 600px) {
-  #parent {
+  #parent1 {
     display: flex;
   }
-  #left {
+  #left1 {
     flex-grow: 3;
   }
-  #right {
+  #right1 {
     flex-grow: 5;
+  }
+  #textarea {
+    display: flex;
+  }
+  #input {
+    flex-grow: 1;
+  }
+  #output {
+    flex-grow: 1;
   }
 }
    label > input {
@@ -42,7 +51,7 @@ border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
  </head>
  <body>
    <h1>json整形するやつ</h1>
- v22<br>
+ v23<br>
   
   <div id="parent">
    
@@ -66,9 +75,11 @@ border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
    
   </div>
   
-  <!-- output -->
+  <!-- textarea -->
+  <div id="textarea">
   <textarea id="input" rows="30" cols="40"></textarea>
   <textarea id="output" rows="30" cols="40"></textarea>
+  </div>
   <br>
   
    <script src="js/json_formatter.js" ></script>
