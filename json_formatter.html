@@ -5,10 +5,10 @@
   <link rel="stylesheet" href="css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-   #child1 {
+   #left {
       background-color: lightblue;
     }
-    #child2 {
+    #right {
       background-color: lightgreen;
     }
    
@@ -27,18 +27,18 @@
  </head>
  <body>
    <h1>json整形するやつ</h1>
- v20<br>
+ v21<br>
   
-  <div class="parent">
+  <div id="parent">
    
   <!-- input -->
-  <div class="left">
+  <div id="left">
    <input type="file" id="inputfile" accept=".txt,.json,.jsonc">
    <br>ふぁいるせんたく
   </div>
   
   <!-- file information -->
-  <div class="right">
+  <div id="right">
 ■ name : ファイル名 : <span id="name"></span><br>
 ■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
 ■ size ：ファイルサイズ ：<span id="size"></span><br>
