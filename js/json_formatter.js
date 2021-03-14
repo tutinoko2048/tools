@@ -6,7 +6,7 @@ inputfile.addEventListener("change", function(e) {
  var reader = new FileReader()
  reader.readAsText(file[0])
  reader.onload = function() {
-   document.getElementById('output').value = reader.result;
+   document.getElementById('input').value = reader.result;
  }
  var input = document.querySelector('#inputfile').files[0];
 // 最後に、反映
