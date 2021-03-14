@@ -1,3 +1,9 @@
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload()
+  }
+};
+
 var inputfile = document.getElementById('inputfile')
  
 inputfile.addEventListener("change", function(e) {
