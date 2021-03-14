@@ -2,29 +2,42 @@
  <head>
    <meta http-equiv="content-type" charset="utf-8">
   <title>json formatter</title>
-  <link rel="stylesheet" href="css/json_formatter.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <style>
+ @media (min-width: 600px) {
+  #parent {
+    display: flex;
+  }
+  #left {
+    flex-grow: 1;
+  }
+  #right {
+    flex-grow: 1;
+  }
+}
+  </style>
  </head>
  <body>
    <h1>json整形するやつ</h1>
- v19
-  <br>
+ v19<br>
   
-  <br>
-  <div id="drop_area" class="drop_area" style="float:left;">
-   <input type="file" id="inputfile" accept=".txt,.json,.jsonc"> <!--単一のファイルを読み込む場合-->
+  <div class="parent">
+   
+  <!-- input -->
+  <div class="left">
+   <input type="file" id="inputfile" accept=".txt,.json,.jsonc">
   </div>
   
   <!-- file information -->
-  <div style="float:right;">
+  <div class="right">
 ■ name : ファイル名 : <span id="name"></span><br>
 ■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
 ■ size ：ファイルサイズ ：<span id="size"></span><br>
    </div>
+   
+  </div>
   
   <!-- output -->
-  <div style="clear:both;"></div>
   <textarea id="output" rows="30" cols="80"></textarea><br>
   
    <script src="js/json_formatter.js" ></script>
