@@ -7,11 +7,13 @@
   <style>
    #left {
       background-color: lightblue;
-      padding: 0 5%;
     }
     #right {
       background-color: lightgreen;
     }
+    #button {
+      padding: 0 5%;
+   }
    
  @media (min-width: 600px) {
   #parent {
@@ -33,6 +35,9 @@ background-color: #006DD9;/* ラベルの背景色を指定する */
 padding: 10px; /* ラベルとテキスト間の余白を指定する */
 border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
 }
+   textarea {
+    width: 50%;
+   }
   </style>
  </head>
  <body>
@@ -44,10 +49,12 @@ border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
   <!-- input -->
   <div id="left">
    <br>
+   <div id="button">
    <label for="inputfile">
    ファイルを選択
    <input type="file" id="inputfile" accept=".txt,.json,.jsonc">
    </label>
+   </div>
   </div>
   
   <!-- file information -->
@@ -60,7 +67,9 @@ border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
   </div>
   
   <!-- output -->
-  <textarea id="output" height="200px" width="50%"></textarea><br>
+  <textarea id="input" rows="30" cols="40"></textarea>
+  <textarea id="output" rows="30" cols="40"></textarea>
+  <br>
   
    <script src="js/json_formatter.js" ></script>
   <br>
