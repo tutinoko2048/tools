@@ -24,7 +24,7 @@ document.querySelector('#size').innerHTML = size_small;
 
 var format = document.getElementById('format')
 format.addEventListener('click', function() {
-  var formatBefore = document.getElementById('input').value
+  var formatBefore = document.getElementById('input').value;
   var json = JSON.parse(formatBefore);
   var formatAfter = JSON.stringify(json, null , 2);
   document.getElementById('output').innerHTML = formatAfter;
@@ -39,6 +39,17 @@ copy.addEventListener('click', function() {
 
 var download = document.getElementById('download')
 download.addEventListener('click', function() {
-  alert('download');
+                var content = document.getElementById('output').value;
+                var blob = new Blob([ content ], { "type" : "text/plain" });
+
+                if (window.navigator.msSaveBlob) { 
+                    window.navigator.msSaveBlob(blob, "test.txt"); 
+
+                    // msSaveOrOpenBlobの場合はファイルを保存せずに開ける
+                    window.navigator.msSaveOrOpenBlob(blob, "test.txt"); 
+                } else {
+                    document.getElementById("download").href = window.URL.createObjectURL(blob);
+                }
+            
 }
 );
