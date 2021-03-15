@@ -31,7 +31,7 @@ format.addEventListener('click', function() {
 );
 
 var copy = document.getElementById('copy')
-format.addEventListener('click', function() {
+copy.addEventListener('click', function() {
   alert('こぴーぼたん');
 }
 );
