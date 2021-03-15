@@ -48,15 +48,17 @@ format.addEventListener('click', function() {
     break;
       
   case 'no-line':
-    alert('改行なし');
+    var jsonReplace = JSON.stringify(json, null , 1);
+    var formatAfter = jsonReplace.replace( "\n", "" );
     break;
     
   case 'no-lh':
-    alert('空白改行なし');
+    var jsonReplace = JSON.stringify(json, null , 0);
+    var formatAfter = jsonReplace.replace( "\n", "" );
     break;
       
   default:
-    alert('other');
+    alert('えらー');
 }
   
   document.getElementById('output').innerHTML = formatAfter;
