@@ -40,15 +40,15 @@ copy.addEventListener('click', function() {
 var download = document.getElementById('download')
 download.addEventListener('click', function() {
                 var content = document.getElementById('output').value;
-                var blob = new Blob([ content ], { "type" : "text/plain" });
+                var blob = new Blob([ content ], { "type" : "application/json" });
 
                 if (window.navigator.msSaveBlob) { 
-                    window.navigator.msSaveBlob(blob, "test.txt"); 
+                    window.navigator.msSaveBlob(blob, input.name); 
 
                     // msSaveOrOpenBlobの場合はファイルを保存せずに開ける
-                    window.navigator.msSaveOrOpenBlob(blob, "test.txt"); 
+                    window.navigator.msSaveOrOpenBlob(blob, input.name); 
                 } else {
-                    document.getElementById("download").href = window.URL.createObjectURL(blob);
+                    document.getElementById("downloadLink").href = window.URL.createObjectURL(blob);
                 }
             
 }
