@@ -47,6 +47,7 @@ copy.addEventListener('click', function() {
   copyText.select();
   output.readOnly = false;
   document.execCommand("copy");
+  window.getSelection().removeAllRanges();
 }
 );
 
