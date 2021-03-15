@@ -25,8 +25,8 @@ document.querySelector('#size').innerHTML = size_small;
 var format = document.getElementById('format')
 format.addEventListener('click', function() {
   alert('ふぉーまっとぼたん');
-  var formatBefore = document.getElementById('input')
-  var formatAfter = JSON.stringify(formatBefore[, replacer[, space]]);
+  var formatBefore = document.getElementById('input').value
+  var formatAfter = JSON.stringify(formatBefore, null , 2);
   document.getElementById('output').value = formatAfter;
 }
 );
