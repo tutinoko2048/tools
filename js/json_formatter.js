@@ -33,6 +33,33 @@ document.querySelector('#size').innerHTML = size_small;
 format.addEventListener('click', function() {
   var formatBefore = document.getElementById('input').value;
   var json = JSON.parse(formatBefore);
+  
+  var indent = document.getElementById('indent').value
+  switch (indent){
+  case 'half2':
+    alert('空白2');
+    break;
+      
+  case 'half4':
+    alert('空白4');
+    break;
+      
+  case 'tab':
+    alert('たぶ');
+    break;
+      
+    case 'no-line':
+    alert('改行なし');
+    break;
+    
+        case 'no-lh':
+    alert('空白改行なし');
+    break;
+      
+  default:
+    alert('other');
+}
+  
   var formatAfter = JSON.stringify(json, null , 2);
   document.getElementById('output').innerHTML = formatAfter;
   copy.disabled = false;
