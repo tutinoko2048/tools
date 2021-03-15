@@ -40,7 +40,7 @@ format.addEventListener('click', function() {
 
 
 copy.addEventListener('click', function() {
-  var copyText = document.getElementsByTagName("textarea")[0];
+  var copyText = document.getElementsByTagName("textarea")[1];
   copyText.select();
   document.execCommand("copy");
 }
