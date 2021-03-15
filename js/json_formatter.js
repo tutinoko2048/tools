@@ -35,24 +35,23 @@ format.addEventListener('click', function() {
   var json = JSON.parse(formatBefore);
   
   var indent = document.getElementById('indent').value
-  switch (indent){
-  case 'half2':
-    alert('空白2');
+ switch (indent){
+  case 'half2':  
+  var formatAfter = JSON.stringify(json, null , 2);
+    break;     
+  case 'half4':   
+  var formatAfter = JSON.stringify(json, null , 4);
     break;
       
-  case 'half4':
-    alert('空白4');
+   case 'tab':   
+  var formatAfter = JSON.stringify(json, null , "\t");
     break;
       
-  case 'tab':
-    alert('たぶ');
-    break;
-      
-    case 'no-line':
+  case 'no-line':
     alert('改行なし');
     break;
     
-        case 'no-lh':
+  case 'no-lh':
     alert('空白改行なし');
     break;
       
@@ -60,7 +59,6 @@ format.addEventListener('click', function() {
     alert('other');
 }
   
-  var formatAfter = JSON.stringify(json, null , 2);
   document.getElementById('output').innerHTML = formatAfter;
   copy.disabled = false;
   download.disabled = false;
