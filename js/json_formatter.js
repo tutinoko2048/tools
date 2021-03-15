@@ -33,6 +33,12 @@ format.addEventListener('click', function() {
 
 var copy = document.getElementById('copy')
 copy.addEventListener('click', function() {
-  alert('こぴー');
+  alert('copy');
+}
+);
+
+var download = document.getElementById('download')
+download.addEventListener('click', function() {
+  alert('download');
 }
 );
