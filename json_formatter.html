@@ -81,7 +81,7 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
  <body>
    <h1>json整形するやつ</h1>
  v28<br>
-  
+  <form name="form1">
   <div id="parent1">
    
   <!-- input -->
@@ -139,14 +139,15 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
   <br>
   インデントの設定<br>
   <select name="indent">
-<option value="">半角空白 2個</option>
-<option value="">半角空白 4個</option>
-<option value="">改行なし</option> 
-<option value="">改行・空白なし</option>
-</select> 
+<option value="half2">半角空白 2個</option>
+<option value="half4">半角空白 4個</option>
+<option value="tab">TAB</option>
+<option value="no-line">改行なし</option> 
+<option value="no-lh">改行・空白なし</option>
+</select>
   
   
-  
+  </form>
    <script src="js/json_formatter.js" ></script>
   <br>
 
