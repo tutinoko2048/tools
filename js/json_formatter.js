@@ -26,7 +26,8 @@ var format = document.getElementById('format')
 format.addEventListener('click', function() {
   alert('ふぉーまっとぼたん');
   var formatBefore = document.getElementById('input')
-  document.getElementById('output').value = JSON.stringify(formatBefore[, replacer[, space]]);
+  var formatAfter = JSON.stringify(formatBefore[, replacer[, space]]);
+  document.getElementById('output').value = formatAfter;
 }
 );
 
