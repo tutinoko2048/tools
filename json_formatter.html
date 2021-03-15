@@ -44,10 +44,10 @@
   #button2 {
    display: flex;
   }
-  #format {
+  #left2 {
     flex-grow: 1;
   }
-  #copy {
+  #right2 {
     flex-grow: 1;
   }
 }
@@ -104,11 +104,17 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
   <textarea id="output" rows="30" cols="40">Output</textarea>
   </div>
   
-  <!-- format -->
+  <!-- format/copy -->
   <div id="button2">
-  <input type="button" value="整形" id="format" class="button2">
-  <input type="button" value="コピー" id="copy" class="button2">
-           </div>
+   <div id="left2">
+   <input type="button" value="整形" id="format" class="button2">
+   </div>
+   <div id="right2">
+   <input type="button" value="コピー" id="copy" class="button2">
+   </div>
+  </div>
+  
+  
    <script src="js/json_formatter.js" ></script>
   <br>
 
