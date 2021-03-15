@@ -41,6 +41,15 @@
   #output {
     flex-grow: 1;
   }
+  #button2 {
+   display: flex;
+  }
+  #format {
+    flex-grow: 1;
+  }
+  #copy {
+    flex-grow: 1;
+  }
 }
    label > input {
 display:none; /* アップロードボタンのスタイルを無効にする */
@@ -53,6 +62,12 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
 }
    textarea {
     font-size: 80%;
+   }
+ #button2 {
+  color: #000; /* ラベルテキストの色を指定する */
+background-color: #ffca57;/* ラベルの背景色を指定する */
+padding: 10px; /* ラベルとテキスト間の余白を指定する */
+border: solid 2px #000;/* ラベルのボーダーを指定する */
    }
   </style>
  </head>
@@ -88,8 +103,12 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
   <textarea id="input" rows="30" cols="40">Input</textarea>
   <textarea id="output" rows="30" cols="40">Output</textarea>
   </div>
-  <br>
   
+  <!-- format -->
+  <div id="button2">
+  <input type="button" value="整形" id="format">
+  <input type="button" value="コピー" id="copy">
+           </div>
    <script src="js/json_formatter.js" ></script>
   <br>
 
