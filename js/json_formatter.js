@@ -36,22 +36,18 @@ format.addEventListener('click', function() {
   
   var indent = document.getElementById('indent').value
  switch (indent){
+  case 'half1':
+  var formatAfter = JSON.stringify(json, null , 1);
+   break;
   case 'half2':  
   var formatAfter = JSON.stringify(json, null , 2);
     break;     
   case 'half4':   
   var formatAfter = JSON.stringify(json, null , 4);
-    break;
-      
+    break;  
    case 'tab':   
   var formatAfter = JSON.stringify(json, null , "\t");
     break;
-      
-  case 'no-line':
-    var jsonReplace = JSON.stringify(json, null , 1);
-    var formatAfter = jsonReplace.replace( /\n/g, "" );
-    break;
-    
   case 'no-lh':
     var jsonReplace = JSON.stringify(json, null , 0);
     var formatAfter = jsonReplace.replace( "\n", "" );
