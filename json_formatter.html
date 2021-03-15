@@ -70,6 +70,7 @@ padding: 10px; /* ラベルとテキスト間の余白を指定する */
 border: solid 2px #000;/* ラベルのボーダーを指定する */
   border-style: none;
    border-radius: 0;
+  !important
 
    }
   </style>
@@ -110,10 +111,14 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
   <!-- format/copy -->
   <div id="button2">
    <div id="left2">
-   <input type="button" value="整形" id="format" class="button2">
+    <label for="format" class="button2">
+   <input type="button" value="整形" id="format">
+    </label>
    </div>
    <div id="right2">
-   <input type="button" value="コピー" id="copy" class="button2">
+    <label for="copy" class="button2">
+   <input type="button" value="コピー" id="copy">
+    </label>
    </div>
   </div>
   
