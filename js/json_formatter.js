@@ -49,7 +49,7 @@ format.addEventListener('click', function() {
       
   case 'no-line':
     var jsonReplace = JSON.stringify(json, null , 1);
-    var formatAfter = jsonReplace.replace( "\n", "" );
+    var formatAfter = jsonReplace.replace( /\n/g, "" );
     break;
     
   case 'no-lh':
