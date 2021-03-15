@@ -24,12 +24,14 @@ document.querySelector('#size').innerHTML = size_small;
 
 var format = document.getElementById('format')
 format.addEventListener('click', function() {
-  alert('format');
+  alert('ふぉーまっとぼたん');
+  var formatBefore = document.getElementById('input')
+  document.getElementById('output').value = JSON.stringify(formatBefore[, replacer[, space]]);
 }
 );
 
 var copy = document.getElementById('copy')
 format.addEventListener('click', function() {
-  alert('copy');
+  alert('こぴーぼたん');
 }
 );
