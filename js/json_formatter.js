@@ -25,13 +25,14 @@ document.querySelector('#size').innerHTML = size_small;
 var format = document.getElementById('format')
 format.addEventListener('click', function() {
   var formatBefore = document.getElementById('input').value
-  var formatAfter = JSON.stringify(formatBefore, null , 2);
+  var json = JSON.parse(formatBefore);
+  var formatAfter = JSON.stringify(json, null , 2);
   document.getElementById('output').innerHTML = formatAfter;
 }
 );
 
 var copy = document.getElementById('copy')
 copy.addEventListener('click', function() {
-  alert('こぴーぼたん');
+  alert('こぴー');
 }
 );
