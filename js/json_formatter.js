@@ -43,12 +43,12 @@ download.addEventListener('click', function() {
                 var blob = new Blob([ content ], { "type" : "application/json" });
 
                 if (window.navigator.msSaveBlob) { 
-                    window.navigator.msSaveBlob(blob, input.name); 
+                    window.navigator.msSaveBlob(blob, "output.json"); 
 
                     // msSaveOrOpenBlobの場合はファイルを保存せずに開ける
-                    window.navigator.msSaveOrOpenBlob(blob, input.name); 
+                    window.navigator.msSaveOrOpenBlob(blob, "output.json"); 
                 } else {
-                    document.getElementById("downloadLink").href = window.URL.createObjectURL(blob);
+                    document.getElementById("download").href = window.URL.createObjectURL(blob);
                 }
             
 }
