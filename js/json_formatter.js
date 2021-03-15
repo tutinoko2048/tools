@@ -33,7 +33,9 @@ format.addEventListener('click', function() {
 
 var copy = document.getElementById('copy')
 copy.addEventListener('click', function() {
-  alert('copy');
+  var copyText = document.getElementById('output').value;
+  copyText.select();
+  document.execCommand("copy");
 }
 );
 
@@ -41,15 +43,7 @@ var download = document.getElementById('download')
 download.addEventListener('click', function() {
                 var content = document.getElementById('output').value;
                 var blob = new Blob([ content ], { "type" : "application/json" });
-
-                if (window.navigator.msSaveBlob) { 
-                    window.navigator.msSaveBlob(blob, "output.json"); 
-
-                    // msSaveOrOpenBlobの場合はファイルを保存せずに開ける
-                    window.navigator.msSaveOrOpenBlob(blob, "output.json"); 
-                } else {
-                    document.getElementById("download").href = window.URL.createObjectURL(blob);
-                }
+                document.getElementById("download").href = window.URL.createObjectURL(blob);
             
 }
 );
