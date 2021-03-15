@@ -10,6 +10,8 @@ var copy = document.getElementById('copy');
 copy.disabled = true;
 var download = document.getElementById('download');
 download.disabled = true;
+var output = document.getElementById('output');
+
 
 
 inputfile.addEventListener("change", function(e) { 
@@ -41,7 +43,9 @@ format.addEventListener('click', function() {
 
 copy.addEventListener('click', function() {
   var copyText = document.getElementsByTagName("textarea")[1];
+  output.readOnly = true;
   copyText.select();
+  output.readOnly = false;
   document.execCommand("copy");
 }
 );
