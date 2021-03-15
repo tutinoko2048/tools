@@ -5,7 +5,6 @@ window.onpageshow = function(event) {
 };
 
 var inputfile = document.getElementById('inputfile')
- 
 inputfile.addEventListener("change", function(e) {
  
  var file = e.target.files 
@@ -22,3 +21,10 @@ let size_small = Math.round(input.size / 1024) + 'KB';
 document.querySelector('#size').innerHTML = size_small;
 
  }, false)
+
+var format = document.getElementById('format')
+format.addEventListener('click', updateButton1);
+
+function updateButton1() {
+  alert('aaa');
+}
