@@ -33,7 +33,7 @@ format.addEventListener('click', function() {
 
 var copy = document.getElementById('copy')
 copy.addEventListener('click', function() {
-  var copyText = document.getElementById('output').value;
+  var copyText = document.getElementsByTagName("textarea")[0];
   copyText.select();
   document.execCommand("copy");
 }
