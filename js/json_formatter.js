@@ -23,8 +23,13 @@ document.querySelector('#size').innerHTML = size_small;
  }, false)
 
 var format = document.getElementById('format')
-format.addEventListener('click', updateButton1);
+format.addEventListener('click', formatButton);
+function formatButton() {
+  alert('format');
+}
 
-function updateButton1() {
-  alert('aaa');
+var copy = document.getElementById('copy')
+format.addEventListener('click', copyButton);
+function copyButton() {
+  alert('copy');
 }
