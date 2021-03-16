@@ -92,27 +92,121 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
    <input type="file" id="inputfile" accept=".txt,.json,.jsonc">
    </label>
    </div>
-   <br>
-  </div>
+<html>
+<head>
+  <meta http-equiv="content-type" charset="utf-8">
+  <title>JSON Formatter</title>
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    #left1 {
+        background-color: lightblue;
+      }
+      #right1 {
+        background-color: lightgreen;
+      }
+      #button {
+        padding: 0 30%;
+     }
+   @media (max-width: 599px) {
+    textarea {
+     width: 100%;
+    }
+     }
+   @media (min-width: 600px) {
+    textarea {
+    width: 50%;
+    }
+    #parent1 {
+      display: flex;
+    }
+    #left1 {
+      flex-grow: 5;
+    }
+    #right1 {
+      flex-grow: 8;
+    }
+    #textarea {
+      display: flex;
+    }
+    #input {
+      flex-grow: 1;
+    }
+    #output {
+      flex-grow: 1;
+    }
+  }
+     label > input {
+  display:none; /* アップロードボタンのスタイルを無効にする */
+  }
+  label {
+  color: #ffffff; /* ラベルテキストの色を指定する */
+  background-color: #006DD9;/* ラベルの背景色を指定する */
+  padding: 10px; /* ラベルとテキスト間の余白を指定する */
+  border: solid 2px #000;/* ラベルのボーダーを指定する */
+  }
+     textarea {
+      font-size: 80%;
+      height: 60%;
+     }
+   .button2 {
+    color: #000; /* ラベルテキストの色を指定する */
+  background-color: #ffca57;/* ラベルの背景色を指定する */
+  padding: 10px; /* ラベルとテキスト間の余白を指定する */
+  border: solid 2px #000;/* ラベルのボーダーを指定する */
+     border-radius: 0;
+    !important
   
-  <!-- file information -->
-  <div id="right1">
-■ name : ファイル名 : <span id="name"></span><br>
-■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
-■ size ：ファイルサイズ ：<span id="size"></span><br>
-   </div>
-   
-  </div>
-  
-  <!-- textarea -->
-  <div id="textarea">
-  <textarea id="input" rows="30" cols="40" placeholder="Input"></textarea>
-  <textarea id="output" rows="30" cols="40" placeholder="Output"></textarea>
-  </div>
-  <br>
-  
-  <!-- format/copy -->
-  <span id="button2">
+     }
+       #button2 {
+     display: flex;
+    }
+    #left2 {
+      flex-grow: 1;
+    }
+    #center2 {
+      flex-grow: 1;
+    }
+    #right2 {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>JSON Formatter</h1>
+  <form name="form1">
+    <div id="parent1">
+
+      <!-- input -->
+      <div id="left1">
+        <br>
+        <div id="button">
+          <label for="inputfile">
+   ファイルを選択
+   <input type="file" id="inputfile" accept=".txt,.json,.jsonc">
+   </label>
+        </div>
+        <br>
+      </div>
+
+      <!-- file information -->
+      <div id="right1">
+        ■ name : ファイル名 : <span id="name"></span><br>
+        ■ type : ファイルのMIMEタイプ：<span id="type"></span><br>
+        ■ size ：ファイルサイズ ：<span id="size"></span><br>
+      </div>
+
+    </div>
+
+    <!-- textarea -->
+    <div id="textarea">
+      <textarea id="input" rows="30" cols="40" placeholder="Input"></textarea>
+      <textarea id="output" rows="30" cols="40" placeholder="Output"></textarea>
+    </div>
+    <br>
+
+    <!-- format/copy -->
+    <span id="button2">
    
    <span id="left2">
     <label for="format" class="button2">
@@ -120,32 +214,32 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
    <input type="button" id="format">
     </label>
    </span>
-   
-   <span id="right2">
+
+    <span id="right2">
     <label for="copy" class="button2">
      コピー
    <input type="button" id="copy">
     </label>
    </span>
-  
+
     <span id="right-right">
      <label for="download" class="button2">
       <a id="download" href="#" download="output.json" style="text-decoration: none; color: #000;">ダウンロード</a>
        <input type="button" id="download">
     </label>    
   </span>
-  </span>
-  <br>
-  インデントの設定<br>
-  <select id="indent">
+    </span>
+    <br> インデントの設定
+    <br>
+    <select id="indent">
 <option value="half2">半角空白 2個</option>
 <option value="half4">半角空白 4個</option>
 <option value="half1">半角空白 1個</option> 
 <option value="tab">TAB</option>
 <option value="no-lh">改行・空白なし</option>
 </select>
-    
+
   </form>
-   <script src="js/json_formatter.js" ></script>
- </body>
+  <script src="js/json_formatter.js"></script>
+</body>
 </html>
