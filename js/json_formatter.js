@@ -71,7 +71,7 @@ copy.addEventListener('click', function() {
   output.readOnly = false;
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
-  alert('コピーしました```);
+  alert('コピーしました');
 }
 );
 
