@@ -4,6 +4,11 @@
   <title>JSON Formatter</title>
   <link rel="stylesheet" href="css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script src="jquery-linedtextarea.js"></script>
+	<link href="jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+  
   <style>
    #left1 {
       background-color: lightblue;
@@ -106,7 +111,7 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
   
   <!-- textarea -->
   <div id="textarea">
-  <textarea id="input" rows="30" cols="40" placeholder="Input"></textarea>
+  <textarea id="input" rows="30" cols="40" placeholder="Input" class="lined"></textarea>
   <textarea id="output" rows="30" cols="40" placeholder="Output"></textarea>
   </div>
   <br>
@@ -147,5 +152,13 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
     
   </form>
    <script src="js/json_formatter.js" ></script>
+  <script>
+$(function() {
+	$(".lined").linedtextarea(
+		{selectedLine: 18}
+	);
+});
+</script>
+
  </body>
 </html>
