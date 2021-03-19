@@ -172,11 +172,17 @@ border: solid 2px #000;/* ラベルのボーダーを指定する */
     
   </form>
    <script src="js/json_formatter.js" ></script>
-  <script>
+ <script>
 $(function() {
-	$(".lined").linedtextarea(
-		{selectedLine: 18}
-	);
+
+  // Target all classed with ".lined"
+  $(".lined").linedtextarea(
+    {selectedLine: 1}
+  );
+
+  // Target a single one
+  $("#mytextarea").linedtextarea();
+
 });
 </script>
 
