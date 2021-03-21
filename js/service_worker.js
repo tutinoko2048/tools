@@ -2,7 +2,10 @@
 var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
     'json_formatter.html',
-    'js/json_formatter.js
+    'js/json_formatter.js',
+    'css/main.css',
+    'img/favicon.ico',
+    'img/image.png'
 ];
 
 // インストール処理
