@@ -35,7 +35,7 @@ format.addEventListener('click', function () {
   var formatBefore = document.getElementById('input').value;
   if ( comment.checked === true ) { 
     var formatBefore = formatBefore.replace( /\/\*.*\*\//gs , "");
-    var formatBefore = formatBefore.replace( /(?=//).*/g, "");
+    var formatBefore = formatBefore.replace( /(?=//).*/g , "");
   }
   var json = JSON.parse(formatBefore);
   var indent = document.getElementById('indent').value
