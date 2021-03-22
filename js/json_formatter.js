@@ -33,7 +33,11 @@ inputfile.addEventListener("change", function (e) {
 
 format.addEventListener('click', function () {
   var formatBefore = document.getElementById('input').value;
-  var withoutComment = 
+  if ( comment === "on" ) { 
+    alert('on'); 
+  } else {
+    alert('off');
+  }
   var json = JSON.parse(formatBefore);
   var indent = document.getElementById('indent').value
   switch (indent) {
