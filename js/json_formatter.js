@@ -55,13 +55,6 @@ format.addEventListener('click', function () {
     alert('えらー');
   }
   document.getElementById('output').innerHTML = formatAfter;
-  var sizeAfter = formatAfter.size;
-  alert(sizeAfter);
-  /*
-  var sizeAfter = Math.round(formatAfter.size / 1024) + 'KB';
-  document.querySelector('#sizeAfter').innerHTML = sizeAfter;
-  alert(sizeAfter);
-  */
   copy.disabled = false;
   download.disabled = false;
 });
@@ -80,8 +73,8 @@ copy.addEventListener('click', function () {
 
 download.addEventListener('click', function () {
   var content = document.getElementById('output').value;
-  var blob = new Blob([content], {
+  var blob2 = new Blob([content], {
     "type": "application/json"
   });
-  document.getElementById("download").href = window.URL.createObjectURL(blob);
+  document.getElementById("download").href = window.URL.createObjectURL(blob2);
 });
