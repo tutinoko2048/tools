@@ -55,6 +55,8 @@ format.addEventListener('click', function () {
     alert('えらー');
   }
   document.getElementById('output').innerHTML = formatAfter;
+  var sizeAfter = formatAfter.size;
+  alert(sizeAfter);
   /*
   var sizeAfter = Math.round(formatAfter.size / 1024) + 'KB';
   document.querySelector('#sizeAfter').innerHTML = sizeAfter;
