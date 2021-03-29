@@ -5,10 +5,16 @@ var copy = document.getElementById('copy');
 copy.disabled = true;
 var download = document.getElementById('download');
 download.disabled = true;
+var input = document.getElementById('input');
 var output = document.getElementById('output');
 var comment = document.getElementById('comment');
 
-inputfile.addEventListener("change", function (e) {
+input.addEventListener('keyup', function () {
+  var inputSize = size_convert();
+  
+}
+                       
+inputfile.addEventListener('change', function (e) {
   var file = e.target.files
   var reader = new FileReader()
   reader.readAsText(file[0])
@@ -76,3 +82,20 @@ download.addEventListener('click', function () {
   });
   document.getElementById("download").href = window.URL.createObjectURL(blob2);
 });
+
+
+function size_convert(bite , decimal){
+  decimal = (decimal) ? Math.pow(10,decimal) : 10;
+  var kiro = 1024;
+  var size = bite;
+  var unit = "B";
+  var units = ["B" , "KB" , "MB" , "GB" , "TB"];
+  for(var i=(units.length-1); i>0; i--){
+    if(bite / Math.pow(kiro,i) > 1){
+      size = Math.round(bite / Math.pow(kiro,i) * decimal) / decimal ;
+      unit = units[i];
+      break;
+    }
+  }
+  return String(size) +" "+ unit;
+}
