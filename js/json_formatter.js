@@ -9,10 +9,12 @@ var input = document.getElementById('input');
 var output = document.getElementById('output');
 var comment = document.getElementById('comment');
 
+/*
 input.addEventListener('keyup', function () {
   var inputSize = size_convert();
   
 }
+*/
                        
 inputfile.addEventListener('change', function (e) {
   var file = e.target.files
