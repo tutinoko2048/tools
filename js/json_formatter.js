@@ -8,8 +8,6 @@ download.disabled = true;
 var output = document.getElementById('output');
 var comment = document.getElementById('comment');
 
-alert('a');
-
 inputfile.addEventListener("change", function (e) {
   var file = e.target.files
   var reader = new FileReader()
