@@ -1,8 +1,3 @@
-window.onpageshow = function(event) {
-  if (event.persisted) {
-    window.location.reload()
-  }
-};
 
 var inputfile = document.getElementById('inputfile');
 var format = document.getElementById('format');
@@ -60,9 +55,11 @@ format.addEventListener('click', function () {
     alert('えらー');
   }
   document.getElementById('output').innerHTML = formatAfter;
+  /*
   var sizeAfter = Math.round(formatAfter.size / 1024) + 'KB';
   document.querySelector('#sizeAfter').innerHTML = sizeAfter;
   alert(sizeAfter);
+  */
   copy.disabled = false;
   download.disabled = false;
 });
