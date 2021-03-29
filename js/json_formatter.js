@@ -26,8 +26,8 @@ inputfile.addEventListener("change", function (e) {
   // 最後に、反映
   document.querySelector('#name').innerHTML = input.name;
   document.querySelector('#type').innerHTML = input.type;
-  var size_small = Math.round(input.size / 1024) + 'KB';
-  document.querySelector('#size').innerHTML = size_small;
+  var sizeSmall = Math.round(input.size / 1024) + 'KB';
+  document.querySelector('#size').innerHTML = sizeSmall;
 }, false)
 
 
@@ -60,6 +60,9 @@ format.addEventListener('click', function () {
     alert('えらー');
   }
   document.getElementById('output').innerHTML = formatAfter;
+  var sizeAfter = Math.round(formatAfter.size / 1024) + 'KB';
+  document.querySelector('#sizeAfter').innerHTML = sizeAfter;
+  alert(sizeAfter);
   copy.disabled = false;
   download.disabled = false;
 });
