@@ -10,8 +10,13 @@ var output = document.getElementById('output');
 var comment = document.getElementById('comment');
 
 /*
-input.addEventListener('keyup', function () {
-  var inputSize = size_convert();
+input.addEventListener('keyup', function (input) {
+var inputText = input.target.files
+var inputReader = new FileReader()
+reader.readAsText(file[0])
+reader.onload = function () {
+var 
+ var inputSize = size_convert();
   
 }
 */
