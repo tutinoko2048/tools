@@ -38,6 +38,7 @@ inputfile.addEventListener('change', function (e) {
 
 
 format.addEventListener('click', function () {
+ document.getElementById('output').innerHTML = '';
   var formatBefore = document.getElementById('input').value;
   if ( comment.checked === true ) { 
     var formatBefore = formatBefore.replace( /\/\*.*\*\//gs , "");
