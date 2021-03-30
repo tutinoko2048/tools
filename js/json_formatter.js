@@ -32,7 +32,7 @@ inputfile.addEventListener('change', function (e) {
   // 最後に、反映
   document.querySelector('#name').innerHTML = input.name;
   document.querySelector('#type').innerHTML = input.type;
-  var sizeSmall = Math.round(input.size / 1024) + 'KB';
+  var sizeSmall = size_convert(input.size,2);
   document.querySelector('#size').innerHTML = sizeSmall;
 }, false)
 
