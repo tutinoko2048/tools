@@ -9,5 +9,5 @@ https://tutinoko2048.github.io/tools/manifest_generator.html
 json_formatter<br>
 https://tutinoko2048.github.io/tools/json_formatter.html
 <br>
-mcstructure editor<br>
-https://tutinoko2048.github.io/mcstructure-editor/index.html
+image<br>
+https://tutinoko2048.github.io/tools/image.html
