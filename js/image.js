@@ -1,11 +1,11 @@
-const input = document.getElementById('input');
-const button = document.getElementById('button');
+let input = document.getElementById('input');
+let button = document.getElementById('button');
 button.disabled = true;
-const width = document.getElementById('width');
+let width = document.getElementById('width');
 width.disabled = true;
-const height = document.getElementById('height');
+let height = document.getElementById('height');
 height.disabled = true;
-const download = document.getElementById('download');
+let download = document.getElementById('download');
 download.disabled = true;
 
 function preview(event) {
