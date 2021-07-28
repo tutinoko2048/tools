@@ -23,7 +23,7 @@ function preview(event) {
     var img = document.createElement("img");
     img.setAttribute("src", reader.result);
     img.setAttribute("id", "previewImage");
-    img.setAttribute("style", "width:100%;");
+    img.setAttribute("style", "width:80%;");
     preview.appendChild(img);
 
   };
