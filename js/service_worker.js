@@ -3,6 +3,7 @@ var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
     'json_formatter.html',
     'js/json_formatter.js',
+    'js/jsonlint.js',
     'css/main.css',
     'img/favicon.ico',
     'img/image.png'
