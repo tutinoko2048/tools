@@ -44,7 +44,10 @@ format.addEventListener('click', function () {
     var formatBefore = formatBefore.replace( /\/\*.*\*\//gs , "");
     var formatBefore = formatBefore.replace( /(?=\/\/).*/g , "");
   }
-  var json = JSON.parse(formatBefore);
+  try {
+      let json = jsonlint.parse(formatBefore);
+      document.getElementById('output').setAttribute('style', 'background-color:#ffffff;');
+
   var indent = document.getElementById('indent').value
   switch (indent) {
   case 'half1':
@@ -65,10 +68,15 @@ format.addEventListener('click', function () {
     break;
   default:
     alert('えらー');
+    
   }
-  document.getElementById('output').innerHTML = formatAfter;
+  document.getElementById('output').value = formatAfter;
   copy.disabled = false;
   download.disabled = false;
+  } catch (err) {
+      document.getElementById('output').value = err.message;
+      document.getElementById('output').setAttribute('style', 'background-color:#ffd2cf;');
+  }
 });
 
 
