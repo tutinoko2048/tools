@@ -46,7 +46,7 @@ format.addEventListener('click', function () {
   }
   try {
       let json = jsonlint.parse(formatBefore);
-      document.getElementById('output').setAttribute('style', 'background-color:#ffffff;');
+      document.getElementById('output').setAttribute('style', 'background-color:#EAEAEA;');
 
   var indent = document.getElementById('indent').value
   switch (indent) {
