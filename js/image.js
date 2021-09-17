@@ -7,6 +7,10 @@ const height = document.getElementById('height');
 height.disabled = true;
 const download = document.getElementById('download');
 download.disabled = true;
+var colors = [];
+let commands = [];
+const downloadFunc = document.getElementById('downloadFunc');
+downloadFunc.disabled = true;
 
 function preview(event) {
 
@@ -30,7 +34,6 @@ function preview(event) {
   reader.onloadend = function() {
     image.src = reader.result;
     result = reader.result
-    console.log(result)
     image.onload = function() {
       result = {
         width: image.naturalWidth,
@@ -106,14 +109,15 @@ button.addEventListener('click', function() {
   image.src = previewImage.getAttribute('src'); // 元画像
   image.crossOrigin = "Anonymous";
   image.onload = function() {
-    var dstWidth = document.getElementById('width').value;
-    var dstHeight = document.getElementById('height').value;
+    dstWidth = Math.round(document.getElementById('width').value);
+    dstHeight = Math.round(document.getElementById('height').value);
     canvas.width = dstWidth;
     canvas.height = dstHeight;
     ctx.drawImage(image, 0, 0, result.width, result.height, 0, 0, dstWidth, dstHeight);
     canvas.id = 'outputCanvas';
     if (document.getElementById("outputCanvas") != null) {
       document.getElementById('outputCanvas').remove();
+      commands = [];
     }
     document.getElementById('output').appendChild(canvas);
 
@@ -123,6 +127,7 @@ button.addEventListener('click', function() {
     console.log(result.width + ' ' + result.height)
     // 16色カラーパレット
     const palettes = ['E9ECEC', 'F07613', 'BD44B3', '3AAFD9', 'F8C627', '70B919', 'ED8DAC', '3E4447', '8E8E86', '158991', '792AAC', '35399D', '724728', '546D1B', 'A12722', '141519'];
+    
     // 各ピクセルの色情報設定
     for (i = 0; i < result.width; i++) {
       for (j = 0; j < result.height; j++) {
@@ -133,6 +138,7 @@ button.addEventListener('click', function() {
           b: imgData.data[2 + j * 4 + i * imgData.width * 4]
         }
         var color = chooseColor(palettes, rgb);
+        colors.push(color);
         var outRGB = convertToRGB(color);
         // 赤成分
         imgData.data[j * 4 + i * imgData.width * 4] = outRGB.r;
@@ -140,16 +146,47 @@ button.addEventListener('click', function() {
         imgData.data[1 + j * 4 + i * imgData.width * 4] = outRGB.g;
         // 青成分
         imgData.data[2 + j * 4 + i * imgData.width * 4] = outRGB.b;
+        var converted = color.replace('E9ECEC', 'wool 0');
+        var converted = converted.replace('F07613', 'wool 1');
+        var converted = converted.replace('BD44B3', 'wool 2');
+        var converted = converted.replace('3AAFD9', 'wool 3');
+        var converted = converted.replace('F8C627', 'wool 4');
+        var converted = converted.replace('70B919', 'wool 5');
+        var converted = converted.replace('ED8DAC', 'wool 6');
+        var converted = converted.replace('3E4447', 'wool 7');
+        var converted = converted.replace('8E8E86', 'wool 8');
+        var converted = converted.replace('158991', 'wool 9');
+        var converted = converted.replace('792AAC', 'wool 10');
+        var converted = converted.replace('35399D', 'wool 11');
+        var converted = converted.replace('724728', 'wool 12');
+        var converted = converted.replace('546D1B', 'wool 13');
+        var converted = converted.replace('A12722', 'wool 14');
+        var converted = converted.replace('141519', 'wool 15');
+        let command = `setblock ~${j}~~${i} ${converted}`;
+        commands.push(command);
       }
     }
     // Canvasのコンテキスト(0, 0)にImageDataを描画
     ctx.putImageData(imgData, 0, 0);
+    console.log(`generated ${commands.length} commands`)
+    downloadFunc.disabled = false;
   } //onload close
 }, false);
 
 download.addEventListener('click', function() {
   CanvasDataDownload('outputCanvas', 'output');
 }, false);
+
+downloadFunc.addEventListener('click', function() {
+  let content = commands.join('\n');
+  let blob = new Blob([content], {
+    "type": "application/force-download"
+  });
+  var link = document.createElement("a");
+  link.href = window.URL.createObjectURL(blob);
+  link.download = 'output.mcfunction';
+  link.click();
+})
 
 // https://kuroeveryday.blogspot.com/2019/01/finding-nearest-colors-using-euclidean-distance.html
 
