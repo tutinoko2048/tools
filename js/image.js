@@ -123,14 +123,14 @@ button.addEventListener('click', function() {
 
     download.disabled = false;
     var imgData = ctx.getImageData(0, 0, result.width, result.height);
-    console.log(imgData.data.length / 4)
-    console.log(result.width + ' ' + result.height)
+    
+    console.log(canvas.width + ' ' + canvas.height);
     // 16色カラーパレット
     const palettes = ['E9ECEC', 'F07613', 'BD44B3', '3AAFD9', 'F8C627', '70B919', 'ED8DAC', '3E4447', '8E8E86', '158991', '792AAC', '35399D', '724728', '546D1B', 'A12722', '141519'];
     
     // 各ピクセルの色情報設定
-    for (i = 0; i < result.width; i++) {
-      for (j = 0; j < result.height; j++) {
+    for (i = 0; i < canvas.width; i++) {
+      for (j = 0; j < canvas.height; j++) {
 
         var rgb = {
           r: imgData.data[j * 4 + i * imgData.width * 4],
